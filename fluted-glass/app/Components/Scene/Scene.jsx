@@ -15,7 +15,7 @@ const Sphere = () => {
     const mousePosition = React.useRef({ x: 0, y: 0 });
     const targetPosition = React.useRef({ x: 0, y: -1 });
     const lerpedPosition = React.useRef({ x: 0, y: -1 });
-    const lerpSpeed = 0.08;
+    const lerpSpeed = 0.1;
 
     React.useEffect(() => {
         const updateMousePosition = (e) => {
@@ -37,7 +37,7 @@ const Sphere = () => {
         const time = state.clock.getElapsedTime();
 
         const lerp = (start, end, t) => start + (end - start) * t;
-        const easing = 0.1;
+        const easing = 0.05;
 
         targetPosition.current.x = mousePosition.current.x;
         targetPosition.current.y = mousePosition.current.y;
@@ -86,7 +86,7 @@ const Sphere = () => {
                 metalness={0.3}
                 roughness={0.3}
                 emissive="#ff4400"
-                emissiveIntensity={1}
+                emissiveIntensity={0.25}
             />
         </mesh>
     );
@@ -120,7 +120,7 @@ const FlutedGlass = () => {
         temporalDistortion: { value: 0.1, min: 0, max: 1, step: 0.1 },
         clearcoat: { value: 0, min: 0, max: 1, step: 0.1 },
         attenuationDistance: { value: 0.5, min: 0, max: 2, step: 0.1 },
-        flutes: { value: 20, min: 5, max: 50, step: 1 },
+        flutes: { value: 15, min: 5, max: 50, step: 1 },
         depth: { value: 0.2, min: 0.01, max: 0.2, step: 0.01 },
         curvature: { value: 0.1, min: 0.1, max: 0.5, step: 0.01 }
     });
