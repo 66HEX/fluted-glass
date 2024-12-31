@@ -48,8 +48,8 @@ export default function Sphere() {
             const xAmplitude = 0.8;
             const yAmplitude = 0.4;
 
-            const xMovement = Math.sin(time * 0.35) * xAmplitude;
-            const yMovement = Math.cos(time * 0.25) * yAmplitude;
+            const xMovement = Math.sin(time * 0.3) * xAmplitude;
+            const yMovement = Math.cos(time * 0.1) * yAmplitude;
 
             meshRef.current.position.x = startPosition.x + xMovement;
             meshRef.current.position.y = startPosition.y + yMovement;

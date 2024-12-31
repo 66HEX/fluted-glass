@@ -95,6 +95,7 @@ export default function FlutedGlass() {
         const geo = new THREE.ExtrudeGeometry(shape, extrudeSettings);
         geo.rotateX(Math.PI / 2);
         geo.rotateY(Math.PI / 8);
+        geo.rotateZ(Math.PI / 8);
         return geo;
     }, [flutes, depth, curvature, dimensions]);
 

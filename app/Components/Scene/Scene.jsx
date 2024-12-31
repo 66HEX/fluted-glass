@@ -51,8 +51,8 @@ const Scene = () => {
                 <FrameLimiter fps={30} />
                 <OrthographicCamera
                     makeDefault
-                    position={[0, 0, 2]}
-                    zoom={3}
+                    position={[0, -0.5, 2]}
+                    zoom={4.5}
                     left={-frustumSize * aspectRatio / 2}
                     right={frustumSize * aspectRatio / 2}
                     top={frustumSize / 2}
