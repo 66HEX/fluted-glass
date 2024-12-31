@@ -4,7 +4,7 @@ import FlutedGlass from "@/app/Components/FlutedGlass/flutedGlass";
 import Sphere from "@/app/Components/Sphere/sphere";
 import {Canvas, useFrame, useThree} from '@react-three/fiber';
 import { OrbitControls, OrthographicCamera } from '@react-three/drei';
-import {useEffect, useLayoutEffect} from 'react';
+import {useEffect, useLayoutEffect, useState} from 'react';
 
 function FrameLimiter({ fps }) {
     const set = useThree((state) => state.set);
@@ -42,7 +42,22 @@ function FrameLimiter({ fps }) {
 }
 
 const Scene = () => {
-    const aspectRatio = window.innerWidth / window.innerHeight;
+    const [aspectRatio, setAspectRatio] = useState(1);
+
+    useEffect(() => {
+        setAspectRatio(window.innerWidth / window.innerHeight);
+
+        const handleResize = () => {
+            setAspectRatio(window.innerWidth / window.innerHeight);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     const frustumSize = 5;
 
     return (
