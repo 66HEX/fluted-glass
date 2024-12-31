@@ -4,30 +4,9 @@ import * as THREE from "three";
 import {MeshTransmissionMaterial} from "@react-three/drei";
 
 export default function FlutedGlass() {
-    const [dimensions, setDimensions] = React.useState({ width: 1, height: 1 });
+    const [dimensions, setDimensions] = React.useState({ width: 4, height: 4 });
 
-    React.useEffect(() => {
-        const updateDimensions = () => {
-            const aspectRatio = window.innerWidth / window.innerHeight;
-            if (aspectRatio > 1) {
-                setDimensions({
-                    width: 2 * aspectRatio,
-                    height: 2
-                });
-            } else {
-                setDimensions({
-                    width: 2,
-                    height: 2 / aspectRatio
-                });
-            }
-        };
 
-        updateDimensions();
-        window.addEventListener('resize', updateDimensions);
-        return () => {
-            window.removeEventListener('resize', updateDimensions);
-        };
-    }, []);
 
     const {
         samples,
@@ -95,7 +74,7 @@ export default function FlutedGlass() {
         const geo = new THREE.ExtrudeGeometry(shape, extrudeSettings);
         geo.rotateX(Math.PI / 2);
         geo.rotateY(Math.PI / 8);
-        geo.rotateZ(Math.PI / 8);
+        geo.rotateZ(Math.PI / 4);
         return geo;
     }, [flutes, depth, curvature, dimensions]);
 

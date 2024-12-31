@@ -7,7 +7,7 @@ export default function Sphere() {
     const meshRef = React.useRef();
     const materialRef = React.useRef();
     const glowRef = React.useRef();
-    const startPosition = { x: 0.2, y: -1 };
+    const startPosition = { x: 0.6, y: -1.2 };
 
     const {
         baseRed,
@@ -45,11 +45,11 @@ export default function Sphere() {
         const time = state.clock.getElapsedTime();
 
         if (meshRef.current) {
-            const xAmplitude = 0.8;
-            const yAmplitude = 0.4;
+            const xAmplitude = 0.4;
+            const yAmplitude = 0.2;
 
-            const xMovement = Math.sin(time * 0.3) * xAmplitude;
-            const yMovement = Math.cos(time * 0.1) * yAmplitude;
+            const xMovement = Math.sin(time * 0.07) * xAmplitude;
+            const yMovement = Math.cos(time * 0.05) * yAmplitude;
 
             meshRef.current.position.x = startPosition.x + xMovement;
             meshRef.current.position.y = startPosition.y + yMovement;

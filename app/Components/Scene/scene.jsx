@@ -51,8 +51,8 @@ const Scene = () => {
                 <FrameLimiter fps={30} />
                 <OrthographicCamera
                     makeDefault
-                    position={[0, -0.5, 2]}
-                    zoom={4.5}
+                    position={[0, 0, 2]}
+                    zoom={4}
                     left={-frustumSize * aspectRatio / 2}
                     right={frustumSize * aspectRatio / 2}
                     top={frustumSize / 2}
@@ -63,7 +63,7 @@ const Scene = () => {
 
                 <OrbitControls />
 
-                <group position={[0, 1, 0]}>
+                <group position={[-1, 1.1, 0]}>
                     <FlutedGlass />
                     <Sphere />
                 </group>

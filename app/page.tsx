@@ -1,7 +1,7 @@
 'use client';
 
 
-import Scene from "@/app/Components/Scene/Scene";
+import Scene from "@/app/Components/Scene/scene";
 
 export default function Home() {
   return (
